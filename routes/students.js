@@ -63,15 +63,6 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/:id", (req, res, next) => {
-    // const foundstudent =
-    //     getElementById(req.params.id, students);
-    //     if(foundstudent){
-    //         res.send(foundstudent);
-    //     }
-    //     else {
-    //         res.status(404).send("Student not found");
-    //     }
-
     console.log(req.params.id);
     const singlestudent = (students.filter(student => student.id == req.params.id));
     res.status(200).send(singlestudent);

@@ -44,6 +44,12 @@ router.get("/", (req, res, next) => {
     res.status(200).send(campuses);
 });
 
+router.get("/:id", (req, res, next) => {
+    console.log(req.params.id);
+    const singlecampus = (campuses.filter(campus => campus.id == req.params.id));
+    res.status(200).send(singlecampus);
+});
+
 router.post("/", (req, res, next) => {
     let newCampus = req.body;
     campuses.push(newCampus);
