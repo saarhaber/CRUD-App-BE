@@ -44,4 +44,10 @@ router.get("/", (req, res, next) => {
     res.status(200).send(campuses);
 });
 
+router.post("/", (req, res, next) => {
+    let newCampus = req.body;
+    campuses.push(newCampus);
+    res.send(newCampus);
+  })
+  
 module.exports = router;
