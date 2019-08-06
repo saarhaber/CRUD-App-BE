@@ -55,6 +55,22 @@ router.post("/", (req, res, next) => {
     res.send(newCampus);
   })
   
+  router.put("/:id", (req, res, next) => {
+      indexofc = -1;
+    for(let i = 0; i < campuses.length; i++){
+        if(campuses[i].id == req.params.id){
+            indexofc = i;
+        }
+
+    }
+    if(indexofc === -1)
+        res.status(400).send("Campus not found");
+
+    campuses[indexofc] = req.query;
+    res.status(200).send(campuses)
+
+  })
+
   router.delete("/:id", (req, res, next) => {
     campuses = (campuses.filter(campus => campus.id != req.params.id));
     res.status(200).send(campuses);
