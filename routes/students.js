@@ -57,3 +57,15 @@ const students = [
     "campusId": 1
     }
 ]
+
+router.get("/", (req, res, next) => {
+    res.status(200).send(students);
+});
+
+router.post("/", (req, res, next) => {
+    let newStudent = req.body;
+    students.push(newStudent);
+    res.send(newStudent);
+  })
+  
+  module.exports = router;

@@ -41,9 +41,7 @@ const campuses = [
 ]
 
 router.get("/", (req, res, next) => {
-    //console.log("hi");
     res.status(200).send(campuses);
-    //res.status(200).send("test");
 });
 
 module.exports = router;
