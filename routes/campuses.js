@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const campuses = [
+var campuses = [
     {
     "id": 1,
     "name": "HUNTER COLLEGE",
@@ -45,7 +45,6 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/:id", (req, res, next) => {
-    console.log(req.params.id);
     const singlecampus = (campuses.filter(campus => campus.id == req.params.id));
     res.status(200).send(singlecampus);
 });
@@ -56,4 +55,8 @@ router.post("/", (req, res, next) => {
     res.send(newCampus);
   })
   
+  router.delete("/:id", (req, res, next) => {
+    campuses = (campuses.filter(campus => campus.id != req.params.id));
+    res.status(200).send(campuses);
+  })
 module.exports = router;
