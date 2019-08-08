@@ -22,10 +22,10 @@ const Campus = db.define("campus", {
     type: Sequelize.STRING,
     allowNull: true
   },
-  cstudents: {
-    type: Sequelize.ARRAY,
-    allowNull: true
-  }
+  // cstudents: {
+  //   type: Sequelize.ARRAY,
+  //   allowNull: true
+  // }
 
 
 });
