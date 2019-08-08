@@ -57,7 +57,16 @@ router.get("/:id/students", async function(req, res, next){
         next(err);
     }
 
-    res.status(200).json(playersOfTeam);
+    let studentsOfCampus;
+
+    try {
+        studentsOfCampus = await foundCampus.getStudents();
+    }
+    catch (err) {
+        next(err);
+    }
+    
+    res.status(200).json(studentsOfCampus);
 });
 
 // router.post("/", (req, res, next) => {

@@ -67,7 +67,7 @@ router.get("/", (req, res, next) => {
 
 router.get("/:id", (req, res, next) => {
     Student.findById(req.params.id)
-      .then(player => res.json(student))
+      .then(student => res.json(student))
       .catch(next)
 });
 
