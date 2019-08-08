@@ -16,8 +16,9 @@ const populateStudentsTable = async (students) => {
     
     let currentStudent = students[i];
     let builtStudent = await Student.build(currentStudent);
-    // console.log(Object.keys(builtStudent.__proto__));
-    //builtStudent.campusId = i;
+     console.log(builtStudent);
+     
+    //builtStudent.campusId = i+1;
     
     await builtStudent.save();
     console.log("yeet");
