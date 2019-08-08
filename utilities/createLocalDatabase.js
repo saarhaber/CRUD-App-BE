@@ -16,6 +16,7 @@ const databaseName = require('./databaseName');
 const cb = (err, res) => {
     console.log(`Attempting to create the database: ${databaseName}!`);
     if (err) {
+        console.log("uh oh");
         console.error(err);
         process.exit(-1);
     }
