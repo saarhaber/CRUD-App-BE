@@ -16,12 +16,14 @@ const populateStudentsTable = async (students) => {
     
     let currentStudent = students[i];
     let builtStudent = await Student.build(currentStudent);
-     console.log(builtStudent);
      
-    //builtStudent.campusId = i+1;
+     
+    
     
     await builtStudent.save();
-    console.log("yeet");
+    // builtStudent.campusId = i+1;
+    console.log(builtStudent.campusId);
+    // await builtStudent.save();
   }
 }
 const seedDatabase = async () => {
