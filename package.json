@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app",
-    "seed": "node ./utilities/seedDatabase"
+    "start": "node app.js",
+    "seed": "node ./utilities/seedDatabase",
+    "deploy": "bash script/deploy"
   },
   "dependencies": {
     "compression": "^1.7.3",
