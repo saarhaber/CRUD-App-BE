@@ -15,22 +15,19 @@ const populateStudentsTable = async (students) => {
   for (let i = 0; i < students.length; i++) {
     
     let currentStudent = students[i];
-    let builtStudent = await Student.build(currentStudent);
+    let builtStudent = await Student.create(currentStudent);
      
      
-    
-    
+    await builtStudent.setCampus(i+1);
+    await console.log(builtStudent.campusId);
     await builtStudent.save();
-    // builtStudent.campusId = i+1;
-    console.log(builtStudent.campusId);
-    // await builtStudent.save();
+
   }
 }
 const seedDatabase = async () => {
   try {
-    await populateStudentsTable(students);
     await populateCampusesTable(campuses);
-
+    await populateStudentsTable(students);
     console.log("Successfully seeded!");
     process.exit(0);
   }
