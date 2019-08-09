@@ -1,5 +1,5 @@
 // All Students at initialization
-const campuses = [
+const students = [
     {
         "firstName": "Jerry",
         "lastName": "Jingle",
@@ -71,3 +71,5 @@ const campuses = [
         "gpa": 3.5,
     }
 ];
+
+module.exports = students;

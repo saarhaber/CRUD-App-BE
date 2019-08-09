@@ -4,7 +4,7 @@ const pgtools = require('pgtools');
 const config = {
     user: 'postgres',
     host: 'localhost',
-    port: 3000,
+    port: 5432,
     password: process.env.LOCAL_DATABASE_PASSWORD
 };
 
@@ -16,6 +16,7 @@ const databaseName = require('./databaseName');
 const cb = (err, res) => {
     console.log(`Attempting to create the database: ${databaseName}!`);
     if (err) {
+        console.log("uh oh");
         console.error(err);
         process.exit(-1);
     }

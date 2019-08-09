@@ -2,10 +2,10 @@ const Sequelize = require('sequelize');
 const db = require('../db');
 
 const Student = db.define("student", {
-  id: {
-   type: Sequelize.INTEGER,
-   allowNull: true
-      },
+  // id: {
+  //  type: Sequelize.INTEGER,
+  //  allowNull: true
+  //     },
   firstName: {
     type: Sequelize.STRING,
     allowNull: false
@@ -27,11 +27,11 @@ const Student = db.define("student", {
   gpa: {
     type: Sequelize.FLOAT,
     allowNull: true
-  },
-  campusIs: {
-    type: Sequelize.INTEGER,
-    allowNull: true
   }
+  // campusIs: {
+  //   type: Sequelize.INTEGER,
+  //   allowNull: true
+  // }
 
 });
 

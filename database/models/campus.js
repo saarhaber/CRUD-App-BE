@@ -3,10 +3,10 @@ const db = require('../db');
 
 const Campus = db.define("campus", {
 
-  id: {
-    type: Sequelize.INTEGER,
-    allowNull: false
-  },
+  // id: {
+  //   type: Sequelize.INTEGER,
+  //   allowNull: false
+  // },
 
   name: {
     type: Sequelize.STRING,
@@ -22,10 +22,10 @@ const Campus = db.define("campus", {
     type: Sequelize.STRING,
     allowNull: true
   },
-  cstudents: {
-    type: Sequelize.ARRAY,
-    allowNull: true
-  }
+  // cstudents: {
+  //   type: Sequelize.ARRAY,
+  //   allowNull: true
+  // }
 
 
 });

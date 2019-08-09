@@ -11,18 +11,26 @@ const populateCampusesTable = async (campuses) => {
 }
 
 const populateStudentsTable = async (students) => {
+  // console.log("yeet");
   for (let i = 0; i < students.length; i++) {
+    
     let currentStudent = students[i];
     let builtStudent = await Student.build(currentStudent);
-    // console.log(Object.keys(builtStudent.__proto__));
-    builtStudent.campusId = i;
-    await builtPlayer.save();
+     
+     
+    
+    
+    await builtStudent.save();
+    // builtStudent.campusId = i+1;
+    console.log(builtStudent.campusId);
+    // await builtStudent.save();
   }
 }
 const seedDatabase = async () => {
   try {
     await populateStudentsTable(students);
     await populateCampusesTable(campuses);
+
     console.log("Successfully seeded!");
     process.exit(0);
   }

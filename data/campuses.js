@@ -55,3 +55,5 @@ const campuses = [
         
     }
 ];
+
+module.exports = campuses;
