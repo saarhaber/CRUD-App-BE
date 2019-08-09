@@ -2,12 +2,6 @@ const Sequelize = require('sequelize');
 const db = require('../db');
 
 const Campus = db.define("campus", {
-
-  // id: {
-  //   type: Sequelize.INTEGER,
-  //   allowNull: false
-  // },
-
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -22,12 +16,6 @@ const Campus = db.define("campus", {
     type: Sequelize.STRING,
     allowNull: true
   },
-  // cstudents: {
-  //   type: Sequelize.ARRAY,
-  //   allowNull: true
-  // }
-
-
 });
 
 module.exports = Campus;

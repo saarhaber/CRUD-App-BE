@@ -11,7 +11,6 @@ const populateCampusesTable = async (campuses) => {
 }
 
 const populateStudentsTable = async (students) => {
-  // console.log("yeet");
   for (let i = 0; i < students.length; i++) {
     
     let currentStudent = students[i];
@@ -19,7 +18,6 @@ const populateStudentsTable = async (students) => {
      
      
     await builtStudent.setCampus(i+1);
-    await console.log(builtStudent.campusId);
     await builtStudent.save();
 
   }

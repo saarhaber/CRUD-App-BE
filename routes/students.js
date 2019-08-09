@@ -59,31 +59,4 @@ router.delete("/:id", async function(req, res, next){
 
 })
 
-// router.post("/", (req, res, next) => {
-//     let newStudent = req.body;
-//     students.push(newStudent);
-//     res.send(newStudent);
-//   })
-  
-//   router.put("/:id", (req, res, next) => {
-//     indexofs = -1;
-//   for(let i = 0; i < students.length; i++){
-//       if(students[i].id == req.params.id){
-//           indexofs = i;
-//       }
-
-//   }
-//   if(indexofs === -1)
-//       res.status(400).send("Student not found");
-
-//   students[indexofs] = req.query;
-//   res.status(200).send(students)
-
-// })
-
-//   router.delete("/:id", (req, res, next) => {
-//     students = (students.filter(student => student.id != req.params.id));
-//     res.status(200).send(students);
-//   })
-
   module.exports = router;

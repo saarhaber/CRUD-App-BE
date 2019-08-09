@@ -22,29 +22,6 @@ router.get("/:id", async function(req, res, next){
     res.status(200).json(foundCampus);
 });
 
-
-// router.get("/:id/students", async function(req, res, next){
-//     let foundCampus;
-
-//     try {
-//         foundCampus = await Campus.findOne({ where: { id: req.params.id} });
-//     }
-//     catch (err){
-//         next(err);
-//     }
-
-//     let studentsOfCampus;
-
-//     try {
-//         studentsOfCampus = await foundCampus.getStudents();
-//     }
-//     catch (err) {
-//         next(err);
-//     }
-    
-//     res.status(200).json(studentsOfCampus);
-// });
-
 router.post("/", (req, res, next) => {
     let newCampus = req.body;
     Campus.create(newCampus);
