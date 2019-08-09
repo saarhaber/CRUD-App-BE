@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
+const PORT = process.env.PORT || 1234;
 
 
 //Initiaes express application
@@ -45,7 +46,7 @@ const syncDatabase = () => {
   };
 
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
 
 });
 
