@@ -7,6 +7,20 @@ router.get("/", (req, res, next) => {
         .catch(next)
 });
 
+router.get("/:id", async function(req, res, next){
+    let foundCampus;
+
+    try {
+        foundCampus = await Campus.findOne({ where: { id: req.params.id} });
+    }
+    catch (err){
+        next(err);
+    }
+    
+    res.status(200).json(foundCampus);
+});
+
+
 router.get("/:id/students", async function(req, res, next){
     let foundCampus;
 
@@ -35,24 +49,43 @@ router.post("/", (req, res, next) => {
     res.status(200).json("Campus created!");
   })
   
-//   router.put("/:id", (req, res, next) => {
-//       indexofc = -1;
-//     for(let i = 0; i < campuses.length; i++){
-//         if(campuses[i].id == req.params.id){
-//             indexofc = i;
-//         }
+  //Puts modified campus at end of json
+  router.put("/:id", async function(req, res, next){
 
-//     }
-//     if(indexofc === -1)
-//         res.status(400).send("Campus not found");
+    let foundCampus;
 
-//     campuses[indexofc] = req.query;
-//     res.status(200).send(campuses)
+    try {
+        foundCampus = await Campus.findOne({ where: { id: req.params.id} });
+    }
+    catch (err){
+        next(err);
+    }
 
-//   })
+    foundCampus.update(req.body);
 
-//   router.delete("/:id", (req, res, next) => {
-//     campuses = (campuses.filter(campus => campus.id != req.params.id));
-//     res.status(200).send(campuses);
-//   })
+    res.status(200).send("Campus updated!")
+
+  })
+
+  //does not update ids of rest of campuses
+  //example, delete campus at id 1, does not set reset of
+  //campuses one back. its handled in the fe, but could have
+  //unintended side effects (or not work entirely)
+  router.delete("/:id", async function(req, res, next){
+
+    let foundCampus;
+
+    try {
+        foundCampus = await Campus.findOne({ where: { id: req.params.id} });
+    }
+    catch (err){
+        next(err);
+    }
+
+    foundCampus.destroy();
+
+    res.status(200).send("Campus deleted!")
+
+  })
+
 module.exports = router;
