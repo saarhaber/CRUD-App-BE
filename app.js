@@ -7,11 +7,11 @@ const logger = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 const PORT = process.env.PORT || 1234;
-
+const cors = require('cors');
 
 //Initiaes express application
 const app = express();
-
+app.use(cors());
 //API Router
 const apiRouter = require("./routes");
 const bodyParser = require("body-parser");
