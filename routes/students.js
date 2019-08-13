@@ -17,7 +17,7 @@ router.get("/:id", (req, res, next) => {
 router.post("/", (req, res, next) => {
   let newStudent = req.body;
   Student.create(newStudent);
-  res.status(200).json("Student created!");
+  res.status(200).json("Student created!               ",newStudent);
 })
 
 //Puts modified student at end of json
