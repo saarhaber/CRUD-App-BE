@@ -32,7 +32,7 @@ router.put("/:id", async function(req, res, next){
       next(err);
   }
   console.log(req.body,"BODY")
-  if (req.body.campusId === "None") {
+  if (req.body.campusId === 0) {
     foundStudent.update(req.body);
     foundStudent.removeCampus();
   }
