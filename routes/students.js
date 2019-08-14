@@ -31,8 +31,15 @@ router.put("/:id", async function(req, res, next){
   catch (err){
       next(err);
   }
-  if(req.body.campusId === "None") foundStudent.removeCampus();
-  foundStudent.update(req.body);
+  if (req.body.campusId === "None") {
+    foundStudent.update(req.body);
+    foundStudent.removeCampus();
+  }
+  else
+  {
+    foundStudent.update(req.body);
+  }
+  
 
   res.status(200).send("Student updated!")
 
