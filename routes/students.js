@@ -33,8 +33,10 @@ router.put("/:id", async function(req, res, next){
   }
   console.log(req.body,"BODY")
   if (req.body.campusId === 0) {
+    req.body.campusId = null;
     await foundStudent.update(req.body);
-    await foundStudent.removeCampus();
+
+    //await foundStudent.removeCampus();
   }
   else
   {
